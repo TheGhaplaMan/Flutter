@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.new_start">
+    package="com.example.trying_again">
    <application
-        android:label="new_start"
+        android:label="trying_again"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

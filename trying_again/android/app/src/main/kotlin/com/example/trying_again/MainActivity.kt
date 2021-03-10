@@ -1,4 +1,4 @@
-package com.example.new_start
+package com.example.trying_again
 
 import io.flutter.embedding.android.FlutterActivity
 
