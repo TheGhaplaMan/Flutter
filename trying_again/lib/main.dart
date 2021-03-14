@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import './question.dart';
+import './answer.dart';
 
 //void main() {
 //  runApp(MyApp());
 //}
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatefulWidget {
@@ -26,8 +28,21 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     var que = [
-      "What is your fav color?",
-      "What is your fav animal?",
+      {
+        "queText": "What is your fav color?",
+        "answers": ["Red", "Green", "Blue"],
+      },
+      {
+        "queText": "What is your fav animal?",
+        "answers": ["Goru", "Khashi", "Vera", "Dumbaa"],
+      },
+      {
+        "queText": "But can Superman beat Goku??",
+        "answers": [
+          "Bruh",
+          "Click here to die of cringe",
+        ],
+      },
     ];
     return MaterialApp(
       home: Scaffold(
@@ -37,23 +52,11 @@ class _MyAppState extends State<MyApp> {
         body: Column(
           children: [
             Question(
-              que[_queIndex],
+              que[_queIndex]["queText"],
             ),
-            ElevatedButton(
-              child: Text("RED"),
-              onPressed: answerQ,
-            ),
-            ElevatedButton(
-              child: Text("GREEN"),
-              onPressed: answerQ,
-            ),
-            ElevatedButton(
-              child: Text("BLUE"),
-              onPressed: () {
-                //print
-                print("Answer 3 chosen");
-              },
-            ),
+            ...(que[_queIndex]["answers"] as List<String>).map((answer) {
+              return Answer(answerQ, answer);
+            }).toList()
           ],
         ),
       ),
