@@ -35,5 +35,5 @@ class Result extends StatelessWidget {
         ],
       ),
     );
-  }
+  } 
 }
