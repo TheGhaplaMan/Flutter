@@ -18,14 +18,14 @@ class MyHomePage extends StatelessWidget {
   final List<Transaction> transaction = [
     Transaction(
       id: "t1",
-      title: 'biri',
+      title: 'Biri',
       amount: 15.11,
       date: DateTime.now(),
     ),
     Transaction(
       id: "t2",
-      title: 'chaa',
-      amount: 5,
+      title: 'Chaa',
+      amount: 5.11,
       date: DateTime.now(),
     ),
   ];
@@ -68,19 +68,30 @@ class MyHomePage extends StatelessWidget {
                         ),
                         padding: EdgeInsets.all(10),
                         child: Text(
-                          tx.amount.toString(),
+                          "\$${tx.amount}",
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 20,
-                            color: Colors.white,
-                            backgroundColor: Colors.black54,
+                            color: Colors.black,
+                            //backgroundColor: Colors.black54,
                           ),
                         ),
                       ),
                       Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
-                          Text(tx.title),
-                          Text(tx.date.toString()),
+                          Text(tx.title,
+                              style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                              )),
+                          Text(
+                            tx.date.toIso8601String(),
+                            style: TextStyle(
+                              color: Colors.blueGrey,
+                              // fontWeight: FontWeight.bold,
+                            ),
+                          ),
                         ],
                       )
                     ],
